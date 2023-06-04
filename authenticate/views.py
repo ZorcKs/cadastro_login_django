@@ -31,8 +31,6 @@ def login(request):
         usuario = authenticate(username=nome_usuario,password=senha)
     
         if usuario:
-            # data = {}
-            # data['nome_usuario_autenticado'] = nome_usuario
             login_django(request, usuario)
             return redirect('url_inicial')
         else:
