@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{%load static%} 
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head> 
+<body>
+    <section>
+        <div>
+            <h1>Login</h1>
+            <form action="{% url 'url_login' %}" method="post"> {% csrf_token %}
+                <input type="text"required minlength="6" maxlength="100" placeholder="Nome" name='nome_usuario'>
+                <br><br>
+                <input type="password" minlength="6" required placeholder="Senha" name='senha'>
+                <br><br>
+                <Button type="submit">Entrar</Button>
+            </form><br/>
+            {% if senha == False %}
+                <span>Nome de usuario e/ou senha incorretos</span><br>
+            {% endif %}
+            <p><a href="{% url 'reset_password' %}">Esqueci minha senha</a></p>
+            <a href="{% url 'url_cadastro' %}">Não tenho cadastro</a>
+        </div>
+    </section>
+</body>
+</html>

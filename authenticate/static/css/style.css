@@ -1,0 +1,42 @@
+@charset "utf-8";
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, #2023F5, #1290DE, #17FAC4 );
+}
+div{
+    background-color: rgb(0, 0, 0, 0.7);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 80px;
+    border-radius: 15px;
+    color: white;
+}
+
+input{
+    padding: 15px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+button{
+    background-color: #1290DE;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+    border-radius: 10 px;
+    color: white;
+}
+button:hover{
+background-color: #17FAC4;
+cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: rgb(196, 230, 230);
+}
+span{
+    font-size: 13px;
+}

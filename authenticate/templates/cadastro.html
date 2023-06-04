@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title> 
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <section>
+        <div>
+            <h1>Cadastre-se aqui</h1>
+            <form action="{% url 'url_cadastro' %}" method="post"> {% csrf_token %}
+                <input type="email" name="email"required placeholder="E-mail" name='email'>
+                <br><br>
+                <input type="text"required minlength="6" maxlength="100" placeholder="Nome" name='nome_usuario'>
+                <br><br>
+                <input type="password"required minlength="6" placeholder="Senha"name='senha'>
+                <br><br>
+                <Button type="submit">Cadastrar</Button>
+            </form><br>
+            <a href="{% url 'url_login' %}">Já tenho cadastro</a><br>
+            
+            {% if usuario %}
+                <br><br>
+                <span>Nome de usuario já cadastrado</span>
+            {% endif %}
+        </div>
+    </section>
+    
+</body>
+</html>
